@@ -1,0 +1,352 @@
+172.20.60.17
+[I 2025-08-14 08:53:17.892 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2025-08-14 08:53:17.897 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2025-08-14 08:53:17.903 ServerApp] jupyterlab | extension was successfully linked.
+[I 2025-08-14 08:53:17.908 ServerApp] notebook | extension was successfully linked.
+[I 2025-08-14 08:53:18.841 ServerApp] notebook_shim | extension was successfully linked.
+[I 2025-08-14 08:53:18.922 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2025-08-14 08:53:18.925 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2025-08-14 08:53:18.926 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2025-08-14 08:53:18.969 LabApp] JupyterLab extension loaded from /home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyterlab
+[I 2025-08-14 08:53:18.969 LabApp] JupyterLab application directory is /home/matheus23002/anaconda/envs/ai/share/jupyter/lab
+[I 2025-08-14 08:53:18.970 LabApp] Extension Manager is 'pypi'.
+[I 2025-08-14 08:53:23.047 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2025-08-14 08:53:23.052 ServerApp] notebook | extension was successfully loaded.
+[I 2025-08-14 08:53:23.053 ServerApp] Serving notebooks from local directory: /home/matheus23002/tcc
+[I 2025-08-14 08:53:23.053 ServerApp] Jupyter Server 2.15.0 is running at:
+[I 2025-08-14 08:53:23.053 ServerApp] http://172.20.60.17:8888/tree?token=a2af8dad3440f171379e4c00411e0601d9f8b75582c0630a
+[I 2025-08-14 08:53:23.053 ServerApp]     http://127.0.0.1:8888/tree?token=a2af8dad3440f171379e4c00411e0601d9f8b75582c0630a
+[I 2025-08-14 08:53:23.053 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 2025-08-14 08:53:23.101 ServerApp] No web browser found: Error('could not locate runnable browser').
+[C 2025-08-14 08:53:23.101 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/matheus23002/.local/share/jupyter/runtime/jpserver-2682590-open.html
+    Or copy and paste one of these URLs:
+        http://172.20.60.17:8888/tree?token=a2af8dad3440f171379e4c00411e0601d9f8b75582c0630a
+        http://127.0.0.1:8888/tree?token=a2af8dad3440f171379e4c00411e0601d9f8b75582c0630a
+[I 2025-08-14 08:53:23.126 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[I 2025-08-14 08:54:51.363 ServerApp] Creating new file in /models/mandioca
+[I 2025-08-14 08:57:08.024 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 08:59:08.529 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 09:01:09.340 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 09:03:10.434 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 09:04:36.102 ServerApp] Creating new notebook in /models/mandioca
+[I 2025-08-14 09:04:48.864 ServerApp] Kernel started: 873cc02c-971c-4933-855c-b7900b70d69e
+[I 2025-08-14 09:05:09.017 ServerApp] Connecting to kernel 873cc02c-971c-4933-855c-b7900b70d69e.
+[I 2025-08-14 09:05:09.070 ServerApp] Starting buffering for 873cc02c-971c-4933-855c-b7900b70d69e:10ed2325-158d-4bad-a00c-ed52027df5ad
+[I 2025-08-14 09:05:09.097 ServerApp] Connecting to kernel 873cc02c-971c-4933-855c-b7900b70d69e.
+[I 2025-08-14 09:05:09.218 ServerApp] Connecting to kernel 873cc02c-971c-4933-855c-b7900b70d69e.
+[I 2025-08-14 09:05:11.513 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 09:05:37.641 ServerApp] Connecting to kernel 873cc02c-971c-4933-855c-b7900b70d69e.
+[I 2025-08-14 09:05:45.640 ServerApp] Connecting to kernel 873cc02c-971c-4933-855c-b7900b70d69e.
+[I 2025-08-14 09:06:44.756 ServerApp] Saving file at /models/mandioca/Untitled.ipynb
+[I 2025-08-14 09:07:09.538 ServerApp] Connecting to kernel 873cc02c-971c-4933-855c-b7900b70d69e.
+[I 2025-08-14 09:08:45.369 ServerApp] Saving file at /models/mandioca/Untitled.ipynb
+[I 2025-08-14 09:10:46.698 ServerApp] Saving file at /models/mandioca/Untitled.ipynb
+[I 2025-08-14 09:12:18.456 ServerApp] Connecting to kernel 873cc02c-971c-4933-855c-b7900b70d69e.
+[I 2025-08-14 09:12:46.890 ServerApp] Saving file at /models/mandioca/Untitled.ipynb
+[I 2025-08-14 09:14:46.957 ServerApp] Saving file at /models/mandioca/Untitled.ipynb
+[I 2025-08-14 09:16:47.104 ServerApp] Saving file at /models/mandioca/Untitled.ipynb
+[I 2025-08-14 09:18:47.220 ServerApp] Saving file at /models/mandioca/Untitled.ipynb
+[I 2025-08-14 09:20:47.522 ServerApp] Saving file at /models/mandioca/Untitled.ipynb
+[I 2025-08-14 09:24:23.478 ServerApp] Connecting to kernel 873cc02c-971c-4933-855c-b7900b70d69e.
+[I 2025-08-14 09:24:24.466 ServerApp] Saving file at /models/mandioca/optuna_funcs.py
+[I 2025-08-14 09:24:31.778 ServerApp] Connecting to kernel 873cc02c-971c-4933-855c-b7900b70d69e.
+[I 2025-08-14 09:24:39.431 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 09:26:39.633 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 09:32:08.943 ServerApp] Starting buffering for 873cc02c-971c-4933-855c-b7900b70d69e:07670ef8-be86-4fc0-b217-026fd41c9dd9
+[I 2025-08-14 09:32:18.175 ServerApp] Kernel shutdown: 873cc02c-971c-4933-855c-b7900b70d69e
+[W 2025-08-14 09:32:21.093 ServerApp] delete /models/mandioca/Untitled.ipynb
+[I 2025-08-14 09:32:40.475 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 09:34:41.190 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 09:36:41.539 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 09:52:42.339 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 09:54:43.438 ServerApp] Saving file at /models/mandioca/final_model.py
+[W 2025-08-14 09:55:35.531 ServerApp] 404 GET /hub/api (@172.20.88.188) 29.09ms referer=None
+[W 2025-08-14 09:55:35.532 ServerApp] 404 GET /hub/api (@172.20.88.188) 0.69ms referer=None
+[W 2025-08-14 09:55:35.533 ServerApp] 404 GET /hub/api (@172.20.88.188) 1.03ms referer=None
+[I 2025-08-14 09:55:36.041 JupyterNotebookApp] 302 GET /tree? (@172.20.88.188) 0.31ms
+[I 2025-08-14 09:55:36.042 JupyterNotebookApp] 302 GET /tree? (@172.20.88.188) 0.24ms
+[I 2025-08-14 09:55:36.043 JupyterNotebookApp] 302 GET /tree? (@172.20.88.188) 0.24ms
+[W 2025-08-14 09:55:37.425 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.460 ServerApp] 403 GET /api/kernels?1755176136731 (@172.20.88.188) 35.61ms referer=None
+[W 2025-08-14 09:55:37.481 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.482 ServerApp] 403 GET /api/kernelspecs?1755176136728 (@172.20.88.188) 0.63ms referer=None
+[W 2025-08-14 09:55:37.497 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.498 ServerApp] 403 GET /api/kernelspecs?1755176136702 (@172.20.88.188) 0.43ms referer=None
+[W 2025-08-14 09:55:37.516 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.516 ServerApp] 403 GET /api/kernels?1755176136708 (@172.20.88.188) 0.42ms referer=None
+[W 2025-08-14 09:55:37.518 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.519 ServerApp] 403 GET /api/kernelspecs?1755176136718 (@172.20.88.188) 0.72ms referer=None
+[W 2025-08-14 09:55:37.522 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.522 ServerApp] 403 GET /api/kernels?1755176136721 (@172.20.88.188) 0.62ms referer=None
+[W 2025-08-14 09:55:37.545 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.545 ServerApp] 403 GET /api/kernels?1755176136794 (@172.20.88.188) 0.42ms referer=None
+[W 2025-08-14 09:55:37.550 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.551 ServerApp] 403 GET /api/sessions?1755176136801 (@172.20.88.188) 0.44ms referer=None
+[W 2025-08-14 09:55:37.581 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.581 ServerApp] 403 GET /api/kernels?1755176136804 (@172.20.88.188) 0.79ms referer=None
+[W 2025-08-14 09:55:37.601 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.601 ServerApp] 403 GET /api/sessions?1755176136809 (@172.20.88.188) 0.72ms referer=None
+[W 2025-08-14 09:55:37.658 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.658 ServerApp] 403 GET /api/sessions?1755176136791 (@172.20.88.188) 0.48ms referer=None
+[W 2025-08-14 09:55:37.694 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.694 ServerApp] 403 GET /api/kernels?1755176136788 (@172.20.88.188) 0.51ms referer=None
+[W 2025-08-14 09:55:37.861 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.861 ServerApp] 403 GET /api/kernelspecs?1755176137602 (@172.20.88.188) 0.42ms referer=None
+[W 2025-08-14 09:55:37.875 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 09:55:37.875 ServerApp] 403 GET /api/kernelspecs?1755176137605 (@172.20.88.188) 0.45ms referer=None
+[I 2025-08-14 09:56:38.571 ServerApp] Saving file at /models/mandioca/final_model.py
+[W 2025-08-14 10:02:15.158 ServerApp] 404 GET /hub/api (@172.20.88.188) 1.48ms referer=None
+[W 2025-08-14 10:02:15.220 ServerApp] 404 GET /hub/api (@172.20.88.188) 0.97ms referer=None
+[W 2025-08-14 10:02:15.302 ServerApp] 404 GET /hub/api (@172.20.88.188) 0.54ms referer=None
+[I 2025-08-14 10:02:15.746 JupyterNotebookApp] 302 GET /tree? (@172.20.88.188) 0.46ms
+[I 2025-08-14 10:02:15.970 JupyterNotebookApp] 302 GET /tree? (@172.20.88.188) 0.44ms
+[W 2025-08-14 10:02:16.035 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:16.036 ServerApp] 403 GET /api/kernels?1755176535767 (@172.20.88.188) 1.22ms referer=None
+[I 2025-08-14 10:02:16.052 JupyterNotebookApp] 302 GET /tree? (@172.20.88.188) 0.24ms
+[W 2025-08-14 10:02:16.055 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:16.055 ServerApp] 403 GET /api/kernelspecs?1755176535763 (@172.20.88.188) 0.44ms referer=None
+[W 2025-08-14 10:02:16.229 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:16.230 ServerApp] 403 GET /api/sessions?1755176535810 (@172.20.88.188) 0.43ms referer=None
+[W 2025-08-14 10:02:16.248 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:16.249 ServerApp] 403 GET /api/kernels?1755176535807 (@172.20.88.188) 0.69ms referer=None
+[W 2025-08-14 10:02:16.368 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:16.369 ServerApp] 403 GET /api/kernelspecs?1755176536000 (@172.20.88.188) 0.63ms referer=None
+[W 2025-08-14 10:02:16.373 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:16.373 ServerApp] 403 GET /api/kernels?1755176536008 (@172.20.88.188) 0.42ms referer=None
+[W 2025-08-14 10:02:16.381 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:16.381 ServerApp] 403 GET /api/sessions?1755176536011 (@172.20.88.188) 0.71ms referer=None
+[W 2025-08-14 10:02:16.382 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:16.382 ServerApp] 403 GET /api/kernels?1755176536001 (@172.20.88.188) 0.43ms referer=None
+[W 2025-08-14 10:02:16.468 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:19.075 ServerApp] 403 GET /api/kernels?1755176536120 (@172.20.88.188) 2607.71ms referer=None
+[W 2025-08-14 10:02:19.078 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:19.078 ServerApp] 403 GET /api/kernelspecs?1755176536117 (@172.20.88.188) 1.64ms referer=None
+[W 2025-08-14 10:02:19.078 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:19.078 ServerApp] 403 GET /api/kernels?1755176536186 (@172.20.88.188) 1.84ms referer=None
+[W 2025-08-14 10:02:19.079 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:19.079 ServerApp] 403 GET /api/sessions?1755176536188 (@172.20.88.188) 2.07ms referer=None
+[W 2025-08-14 10:02:19.079 ServerApp] wrote error: 'Forbidden'
+    Traceback (most recent call last):
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 1788, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/tornado/web.py", line 3289, in wrapper
+        url = self.get_login_url()
+      File "/home/matheus23002/anaconda/envs/ai/lib/python3.10/site-packages/jupyter_server/base/handlers.py", line 784, in get_login_url
+        raise web.HTTPError(403)
+    tornado.web.HTTPError: HTTP 403: Forbidden
+[W 2025-08-14 10:02:19.079 ServerApp] 403 GET /api/kernelspecs?1755176536191 (@172.20.88.188) 2.30ms referer=None
+[I 2025-08-14 10:03:17.471 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 10:05:36.519 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 10:07:18.461 ServerApp] Saving file at /models/mandioca/final_model.py
+[I 2025-08-14 10:07:30.039 ServerApp] Saving file at /models/mandioca/final_model.py

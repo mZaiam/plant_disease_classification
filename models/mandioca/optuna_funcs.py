@@ -60,7 +60,7 @@ def load_data(name, root, img_size=(224, 224)):
 
     return images, labels, names
 
-def objective(trial, train_loader, val_loader, device, kfold=False):
+def objective(trial, train_loader, val_loader, device, kfold=False, best_model=False):
     '''
     Optuna objective.
     
@@ -70,6 +70,7 @@ def objective(trial, train_loader, val_loader, device, kfold=False):
         val_loader:   torch DataLoader with val data.
         device:       torch device.
         kfold:        bool for KFold usage.
+        best_model:   bool for returning best model.
     '''
 
     # Defining HP grid
@@ -140,10 +141,13 @@ def objective(trial, train_loader, val_loader, device, kfold=False):
 
     print(f'train_acc: {max(train_acc):.2f} val_acc: {max(val_acc):.2f}')
 
-    if kfold:
-        return max(val_acc)
+    if best_model:
+        return cnn
     else:
-        return loss
+        if kfold:
+            return max(val_acc)
+        else:
+            return loss
 
 def cross_validation(study, dataset, train_transforms, val_transforms, device, n_splits=10, top=50):
     '''
