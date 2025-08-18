@@ -19,6 +19,7 @@ from optuna_funcs import load_data, objective, cross_validation
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 SEED = 42
+torch.manual_seed(SEED)
 print(f'Device: {device}')
 
 # Load data

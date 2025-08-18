@@ -19,6 +19,7 @@ from optuna_funcs import load_data, objective
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 SEED = 42
+torch.manual_seed(SEED)
 print(f'Device: {device}')
 
 # Load data
@@ -82,6 +83,7 @@ print(f'Best accuracy: {float(df["Mean"][0]):.2f}%')
 
 best_trial_num = df["Number"][0]
 best_trial = study.get_trials()[best_trial_num]
+kfold_acc = [df[f'Cross_Val_{i}'][0].item() for i in range(10)]
 
 # Training best model
 
@@ -96,13 +98,16 @@ cnn = objective(
 train_loss, test_loss = cnn.loss_train, cnn.loss_val
 train_acc, test_acc = cnn.acc_train, cnn.acc_val
 
+model_state = cnn.model_state
+
 # Save model
 
 best_model = {
-    'model': cnn.state_dict(),
+    'model': model_state,
     'train_loss': train_loss,
     'test_loss': test_loss,
     'train_acc': train_acc,
-    'test_acc': test_acc
+    'test_acc': test_acc,
+    'kfold_acc': kfold_acc
 }
 torch.save(best_model, f'best_models/{STUDY_NAME}.pth')
