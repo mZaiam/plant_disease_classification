@@ -11,7 +11,7 @@ import numpy as np
 import os
 from PIL import Image
 
-from cnn import CNN, ResNet, DatasetAugmentation, SubsetAugmentation
+from cnn import CNN, CNNTransferLearning, DatasetAugmentation, SubsetAugmentation
 
 def load_data(name, root, img_size=(224, 224)):
     '''
@@ -121,7 +121,7 @@ def objective(trial, train_loader, val_loader, device, kfold=False, best_model=F
         lin_batchnorm=params['lin_batchnorm'],
         device=device
     )
-    
+
     # Instantiating optimizer and loss
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(cnn.parameters(), lr=params['lr'])
@@ -245,6 +245,57 @@ def cross_validation_resnet(dataset, train_transforms, val_transforms, device, n
         val_loader = DataLoader(val_subset, batch_size=4, shuffle=False)
         
         _, (acc_train, acc_val) = resnet.fit(
+            train_loader, 
+            val_loader, 
+            optimizer,
+            criterion,
+            epochs,
+            optuna=True
+        )
+        acc.append(max(acc_val))
+        print(acc_val)
+
+    return acc
+
+def cross_validation_tl(best_trial, dataset, train_transforms, val_transforms, device, n_splits=10, epochs=30, n_classes=3, fine_tuning=False):
+    '''
+    Cross-validation.
+
+    Args:
+        best_trial:       optuna trial with model params.
+        dataset:          torch TensorDataset with train+val data.
+        train_transforms: torchvision transforms for train data.
+        val_transforms:   torchvision transforms for val data.
+        device:           torch device.
+        n_splits:         int for KFold splits.
+        epochs:           int for epochs in training.
+        n_classes:        int for classes in dataset.
+        fine_tuning:      bool for fine tuning.
+    
+    Returns:
+        acc:              list with accuracies from each Fold.      
+    
+    Ref:
+        https://saturncloud.io/blog/how-to-use-kfold-cross-validation-with-dataloaders-in-pytorch/
+    '''
+
+    # KFold Cross-Validation
+    kf = KFold(n_splits=n_splits, shuffle=True, random_state=42)
+    acc = []
+    for fold, (train_idx, val_idx) in enumerate(kf.split(dataset)):
+        print(f'Fold {fold+1}')
+
+        cnn = CNNTransferLearning(best_trial, n_classes, device=device, fine_tuning=fine_tuning)
+        criterion = nn.CrossEntropyLoss()
+        optimizer = optim.Adam(cnn.parameters(), lr=5e-4)
+
+        train_subset = SubsetAugmentation(dataset, train_idx, train_transforms)
+        val_subset = SubsetAugmentation(dataset, val_idx, val_transforms)
+        
+        train_loader = DataLoader(train_subset, batch_size=4, shuffle=True)
+        val_loader = DataLoader(val_subset, batch_size=4, shuffle=False)
+        
+        _, (acc_train, acc_val) = cnn.fit(
             train_loader, 
             val_loader, 
             optimizer,

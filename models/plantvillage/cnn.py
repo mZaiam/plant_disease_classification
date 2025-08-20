@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import TensorDataset
 from torchvision import transforms
+import torchvision.models as models
 from optuna import TrialPruned
 
 class CNN(nn.Module):
@@ -133,6 +134,7 @@ class CNN(nn.Module):
         loss_val = []
         acc_train = []
         acc_val = []
+        best_loss = 0.0
 
         for i, epoch in enumerate(range(epochs)):
             # Train data
@@ -181,6 +183,10 @@ class CNN(nn.Module):
             loss_val.append(loss_val_epoch)
             acc_val_epoch = 100 * total_correct_val / total_samples_val 
             acc_val.append(acc_val_epoch)
+
+            if acc_val_epoch > best_loss:
+                best_loss = acc_val_epoch
+                self.model_state = self.state_dict()
 
             # Pruning 
             if trial:
@@ -244,3 +250,141 @@ class SubsetAugmentation(torch.utils.data.Dataset):
         
     def __len__(self):
         return len(self.idxs)
+
+# ResNet classes
+
+class Identity(nn.Module):
+    def __init__(self):
+        super(Identity, self).__init__()
+
+    def forward(self, x):
+        return x
+
+class ResNet(nn.Module):
+    def __init__(self, n_classes, fine_tuning=False, device='cpu'):
+        super(ResNet, self).__init__() 
+
+        self.device = device
+        self.fine_tuning = fine_tuning
+        
+        resnet = models.resnet50(weights=models.ResNet50_Weights.DEFAULT)
+        resnet.fc = Identity()
+        self.resnet = resnet.to(device)
+        
+        self.fc = nn.Linear(
+            in_features=2048,
+            out_features=n_classes
+        ).to(device)
+
+    def forward(self, x):
+        if self.fine_tuning:
+            resnet_out = self.resnet(x)
+        else:
+            with torch.no_grad():
+                resnet_out = self.resnet(x)
+        lin_out = self.fc(resnet_out)
+        return lin_out
+
+    def fit(
+        self,
+        train_loader, 
+        val_loader, 
+        optimizer, 
+        criterion, 
+        epochs, 
+        trial=None,
+        verbose=False, 
+        optuna=False
+    ):
+        '''
+        Training method.
+
+        Args:
+            train_loader: torch DataLoader with train data. 
+            val_loader:   torch DataLoader with test data.
+            optimizer:    torch optimizer.
+            criterion:    torch criterion.
+            epochs:       int with number of epochs.
+            trial:        optuna trial for pruning in HP tunning.
+            verbose:      bool for loss value outputs in training.
+            optuna:       bool for optuna usage.
+        '''
+        
+        self.to(self.device)
+        
+        loss_train = []
+        loss_val = []
+        acc_train = []
+        acc_val = []
+        best_loss = 0.0
+
+        for i, epoch in enumerate(range(epochs)):
+            # Train data
+            self.train()  
+            loss_train_epoch = 0.0
+            total_correct_train = 0
+            total_samples_train = 0
+    
+            for x_batch, y_batch in train_loader:
+                x_batch, y_batch = x_batch.to(self.device), y_batch.to(self.device)
+                
+                optimizer.zero_grad()  
+                y_pred = self.forward(x_batch)  
+                loss = criterion(y_pred, y_batch)  
+                loss.backward() 
+                optimizer.step() 
+                loss_train_epoch += loss.item()
+                
+                preds = y_pred.argmax(dim=1)
+                total_correct_train += (preds == y_batch).sum().item()
+                total_samples_train += y_batch.size(0)
+    
+            loss_train_epoch /= len(train_loader)
+            loss_train.append(loss_train_epoch)
+            acc_train_epoch = 100 * total_correct_train / total_samples_train
+            acc_train.append(acc_train_epoch)
+    
+            # Val data
+            self.eval()  
+            loss_val_epoch = 0.0
+            total_correct_val = 0
+            total_samples_val = 0
+            
+            with torch.no_grad():
+                for x_batch, y_batch in val_loader:
+                    x_batch, y_batch = x_batch.to(self.device), y_batch.to(self.device)
+                    y_pred = self.forward(x_batch) 
+                    loss = criterion(y_pred, y_batch) 
+                    loss_val_epoch += loss.item()
+                    
+                    preds = y_pred.argmax(dim=1)
+                    total_correct_val += (preds == y_batch).sum().item()
+                    total_samples_val += y_batch.size(0)
+    
+            loss_val_epoch /= len(val_loader)
+            loss_val.append(loss_val_epoch)
+            acc_val_epoch = 100 * total_correct_val / total_samples_val 
+            acc_val.append(acc_val_epoch)
+
+            if acc_val_epoch > best_loss:
+                best_loss = acc_val_epoch
+                self.model_state = self.state_dict()
+            
+            # Pruning 
+            if trial:
+                trial.report(acc_val_epoch, step=i)
+                if trial.should_prune():
+                    raise TrialPruned()
+
+            # Loss printing
+            if verbose:
+                print(f'Epoch {epoch+1}/{epochs}: train_acc: {acc_train_epoch:.2f} val_acc: {acc_val_epoch:.2f}')
+                
+        self.loss_train = loss_train
+        self.loss_val = loss_val
+        self.acc_train = acc_train
+        self.acc_val = acc_val
+
+        # Return losses for optuna HP tuning
+        if optuna:
+            return min(self.loss_val), (self.acc_train, self.acc_val)

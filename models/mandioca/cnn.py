@@ -388,3 +388,199 @@ class ResNet(nn.Module):
         # Return losses for optuna HP tuning
         if optuna:
             return min(self.loss_val), (self.acc_train, self.acc_val)
+
+# Transfer Learning class
+
+def instantiate(trial, device):
+    '''
+    Model instantiation.
+    
+    Args:
+        trial:        optuna trial.
+        device:       torch device.
+    '''
+
+    # Defining HP grid
+    params = {
+        'conv_layers': trial.suggest_int('conv_layers', 1, 5),
+        'conv_activation': trial.suggest_categorical('conv_activation', ['relu', 'sigmoid', 'tanh', 'leaky_relu']),
+        'conv_kernel_size': trial.suggest_categorical('conv_kernel_size', [3, 5, 7]),
+        'conv_batchnorm': trial.suggest_categorical('conv_batchnorm', [True, False]),
+        'adaptive_pool_size': trial.suggest_categorical('adaptive_pool_size', [1, 2, 3, 4]),
+        'lin_layers': trial.suggest_int('lin_layers', 1, 3),
+        'lin_activation': trial.suggest_categorical('lin_activation', ['relu', 'sigmoid', 'tanh']),
+        'lin_batchnorm': trial.suggest_categorical('lin_batchnorm', [True, False]),
+        'lr': trial.suggest_categorical('lr', [5e-2, 1e-3, 5e-3, 1e-4]),
+    }
+    
+    # Instantianting CNN
+    N_CLASSES = 38
+        
+    dict_activations = {
+        'relu': nn.ReLU(),
+        'sigmoid': nn.Sigmoid(),
+        'tanh': nn.Tanh(),
+        'leaky_relu': nn.LeakyReLU()
+    }
+        
+    list_conv_layers = [
+        [16],
+        [16, 32],
+        [16, 32, 64],
+        [16, 32, 64, 128],
+        [16, 32, 64, 128, 256],
+    ]
+    
+    list_lin_layers = [
+        [128, N_CLASSES],
+        [128, 64, N_CLASSES],
+        [128, 64, 32, N_CLASSES],
+    ]
+        
+    cnn = CNN(
+        conv_filters=list_conv_layers[params['conv_layers'] - 1],
+        conv_activation=dict_activations[params['conv_activation']],
+        conv_kernel_size=params['conv_kernel_size'],
+        conv_batchnorm=params['conv_batchnorm'],
+        adaptive_pool_size=params['adaptive_pool_size'],
+        lin_neurons=list_lin_layers[params['lin_layers'] - 1],
+        lin_activation=dict_activations[params['lin_activation']],     
+        lin_batchnorm=params['lin_batchnorm'],
+        device=device
+    )
+
+    return cnn
+
+class CNNTransferLearning(nn.Module):
+    def __init__(self, best_trial, n_classes, fine_tuning=False, device='cpu', path='../plantvillage/best_models/plantvillage.pth'):
+        super(CNNTransferLearning, self).__init__() 
+
+        self.device = device
+        self.fine_tuning = fine_tuning
+        
+        cnn = instantiate(
+            best_trial,
+            device,
+        )
+        cnn.load_state_dict(torch.load(path, map_location=device, weights_only=True)['model'])
+        in_features = cnn.lin[-1].weight.shape[-1]
+        cnn.lin[-1] = Identity()
+        self.cnn = cnn.to(device)
+        
+        self.fc = nn.Linear(
+            in_features=in_features,
+            out_features=n_classes
+        ).to(device)
+
+    def forward(self, x):
+        if self.fine_tuning:
+            cnn_out = self.cnn(x)
+        else:
+            with torch.no_grad():
+                cnn_out = self.cnn(x)
+        lin_out = self.fc(cnn_out)
+        return lin_out
+
+    def fit(
+        self,
+        train_loader, 
+        val_loader, 
+        optimizer, 
+        criterion, 
+        epochs, 
+        trial=None,
+        verbose=False, 
+        optuna=False
+    ):
+        '''
+        Training method.
+
+        Args:
+            train_loader: torch DataLoader with train data. 
+            val_loader:   torch DataLoader with test data.
+            optimizer:    torch optimizer.
+            criterion:    torch criterion.
+            epochs:       int with number of epochs.
+            trial:        optuna trial for pruning in HP tunning.
+            verbose:      bool for loss value outputs in training.
+            optuna:       bool for optuna usage.
+        '''
+        
+        self.to(self.device)
+        
+        loss_train = []
+        loss_val = []
+        acc_train = []
+        acc_val = []
+        best_loss = 0.0
+
+        for i, epoch in enumerate(range(epochs)):
+            # Train data
+            self.train()  
+            loss_train_epoch = 0.0
+            total_correct_train = 0
+            total_samples_train = 0
+    
+            for x_batch, y_batch in train_loader:
+                x_batch, y_batch = x_batch.to(self.device), y_batch.to(self.device)
+                
+                optimizer.zero_grad()  
+                y_pred = self.forward(x_batch)  
+                loss = criterion(y_pred, y_batch)  
+                loss.backward() 
+                optimizer.step() 
+                loss_train_epoch += loss.item()
+                
+                preds = y_pred.argmax(dim=1)
+                total_correct_train += (preds == y_batch).sum().item()
+                total_samples_train += y_batch.size(0)
+    
+            loss_train_epoch /= len(train_loader)
+            loss_train.append(loss_train_epoch)
+            acc_train_epoch = 100 * total_correct_train / total_samples_train
+            acc_train.append(acc_train_epoch)
+    
+            # Val data
+            self.eval()  
+            loss_val_epoch = 0.0
+            total_correct_val = 0
+            total_samples_val = 0
+            
+            with torch.no_grad():
+                for x_batch, y_batch in val_loader:
+                    x_batch, y_batch = x_batch.to(self.device), y_batch.to(self.device)
+                    y_pred = self.forward(x_batch) 
+                    loss = criterion(y_pred, y_batch) 
+                    loss_val_epoch += loss.item()
+                    
+                    preds = y_pred.argmax(dim=1)
+                    total_correct_val += (preds == y_batch).sum().item()
+                    total_samples_val += y_batch.size(0)
+    
+            loss_val_epoch /= len(val_loader)
+            loss_val.append(loss_val_epoch)
+            acc_val_epoch = 100 * total_correct_val / total_samples_val 
+            acc_val.append(acc_val_epoch)
+
+            if acc_val_epoch > best_loss:
+                best_loss = acc_val_epoch
+                self.model_state = self.state_dict()
+            
+            # Pruning 
+            if trial:
+                trial.report(acc_val_epoch, step=i)
+                if trial.should_prune():
+                    raise TrialPruned()
+
+            # Loss printing
+            if verbose:
+                print(f'Epoch {epoch+1}/{epochs}: train_acc: {acc_train_epoch:.2f} val_acc: {acc_val_epoch:.2f}')
+                
+        self.loss_train = loss_train
+        self.loss_val = loss_val
+        self.acc_train = acc_train
+        self.acc_val = acc_val
+
+        # Return losses for optuna HP tuning
+        if optuna:
+            return min(self.loss_val), (self.acc_train, self.acc_val)

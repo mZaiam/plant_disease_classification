@@ -724,3 +724,316 @@ train_acc: 10.15 val_acc: 10.35
 Fold 3
 train_acc: 10.09 val_acc: 10.52
 Fold 4
+train_acc: 10.20 val_acc: 10.29
+Fold 5
+train_acc: 10.11 val_acc: 10.31
+Fold 6
+train_acc: 10.15 val_acc: 10.48
+Fold 7
+train_acc: 10.09 val_acc: 10.37
+Fold 8
+train_acc: 10.16 val_acc: 9.90
+Fold 9
+train_acc: 10.07 val_acc: 10.13
+Fold 10
+train_acc: 10.02 val_acc: 11.05
+Fold 1
+train_acc: 9.92 val_acc: 10.17
+Fold 2
+train_acc: 9.92 val_acc: 10.35
+Fold 3
+train_acc: 9.91 val_acc: 10.52
+Fold 4
+train_acc: 9.85 val_acc: 10.29
+Fold 5
+train_acc: 9.87 val_acc: 10.31
+Fold 6
+train_acc: 9.82 val_acc: 10.48
+Fold 7
+train_acc: 9.84 val_acc: 10.37
+Fold 8
+train_acc: 9.89 val_acc: 9.90
+Fold 9
+train_acc: 9.89 val_acc: 10.13
+Fold 10
+train_acc: 9.89 val_acc: 11.05
+Fold 1
+train_acc: 17.15 val_acc: 20.07
+Fold 2
+train_acc: 13.34 val_acc: 13.81
+Fold 3
+train_acc: 12.68 val_acc: 12.65
+Fold 4
+train_acc: 10.23 val_acc: 10.29
+Fold 5
+train_acc: 10.18 val_acc: 10.31
+Fold 6
+train_acc: 10.08 val_acc: 10.48
+Fold 7
+train_acc: 10.82 val_acc: 10.37
+Fold 8
+train_acc: 11.49 val_acc: 12.28
+Fold 9
+train_acc: 10.09 val_acc: 10.13
+Fold 10
+train_acc: 10.14 val_acc: 11.05
+Fold 1
+train_acc: 10.11 val_acc: 10.17
+Fold 2
+train_acc: 10.23 val_acc: 10.35
+Fold 3
+train_acc: 10.15 val_acc: 10.52
+Fold 4
+train_acc: 10.23 val_acc: 10.29
+Fold 5
+train_acc: 10.20 val_acc: 10.31
+Fold 6
+train_acc: 10.11 val_acc: 10.48
+Fold 7
+train_acc: 10.18 val_acc: 10.37
+Fold 8
+train_acc: 10.25 val_acc: 9.90
+Fold 9
+train_acc: 10.08 val_acc: 10.13
+Fold 10
+train_acc: 10.00 val_acc: 11.05
+Fold 1
+train_acc: 10.04 val_acc: 10.17
+Fold 2
+train_acc: 10.10 val_acc: 10.35
+Fold 3
+train_acc: 10.18 val_acc: 10.52
+Fold 4
+train_acc: 10.25 val_acc: 10.29
+Fold 5
+train_acc: 10.06 val_acc: 10.31
+Fold 6
+train_acc: 10.03 val_acc: 10.48
+Fold 7
+train_acc: 10.07 val_acc: 10.37
+Fold 8
+train_acc: 10.23 val_acc: 9.90
+Fold 9
+train_acc: 10.11 val_acc: 10.13
+Fold 10
+train_acc: 10.10 val_acc: 11.05
+Fold 1
+train_acc: 10.15 val_acc: 10.17
+Fold 2
+train_acc: 10.13 val_acc: 10.37
+Fold 3
+train_acc: 10.08 val_acc: 10.52
+Fold 4
+train_acc: 10.12 val_acc: 10.29
+Fold 5
+train_acc: 10.30 val_acc: 10.31
+Fold 6
+train_acc: 10.13 val_acc: 10.48
+Fold 7
+train_acc: 10.21 val_acc: 10.37
+Fold 8
+train_acc: 10.23 val_acc: 9.90
+Fold 9
+train_acc: 10.12 val_acc: 10.13
+Fold 10
+train_acc: 20.15 val_acc: 21.75
+Fold 1
+train_acc: 10.31 val_acc: 10.17
+Fold 2
+train_acc: 10.23 val_acc: 10.35
+Fold 3
+train_acc: 10.23 val_acc: 10.52
+Fold 4
+train_acc: 10.26 val_acc: 10.29
+Fold 5
+train_acc: 10.17 val_acc: 10.31
+Fold 6
+train_acc: 85.50 val_acc: 85.84
+Fold 7
+train_acc: 86.45 val_acc: 85.78
+Fold 8
+train_acc: 10.33 val_acc: 9.90
+Fold 9
+train_acc: 10.22 val_acc: 10.13
+Fold 10
+train_acc: 88.01 val_acc: 87.33
+Fold 1
+train_acc: 14.03 val_acc: 10.17
+Fold 2
+train_acc: 10.13 val_acc: 10.35
+Fold 3
+train_acc: 14.77 val_acc: 13.51
+Fold 4
+train_acc: 13.25 val_acc: 10.29
+Fold 5
+train_acc: 10.22 val_acc: 10.31
+Fold 6
+train_acc: 10.15 val_acc: 10.48
+Fold 7
+train_acc: 10.19 val_acc: 10.37
+Fold 8
+train_acc: 10.21 val_acc: 9.90
+Fold 9
+train_acc: 13.89 val_acc: 14.73
+Fold 10
+train_acc: 10.00 val_acc: 11.05
+Fold 1
+train_acc: 10.17 val_acc: 10.17
+Fold 2
+train_acc: 10.20 val_acc: 10.35
+Fold 3
+train_acc: 10.18 val_acc: 10.27
+Fold 4
+train_acc: 10.19 val_acc: 10.29
+Fold 5
+train_acc: 10.16 val_acc: 10.31
+Fold 6
+train_acc: 10.24 val_acc: 10.48
+Fold 7
+train_acc: 10.12 val_acc: 10.37
+Fold 8
+train_acc: 10.24 val_acc: 9.90
+Fold 9
+train_acc: 10.17 val_acc: 10.13
+Fold 10
+train_acc: 10.09 val_acc: 11.05
+Fold 1
+train_acc: 10.13 val_acc: 10.17
+Fold 2
+train_acc: 10.09 val_acc: 10.35
+Fold 3
+train_acc: 10.02 val_acc: 10.52
+Fold 4
+train_acc: 10.09 val_acc: 10.29
+Fold 5
+train_acc: 10.10 val_acc: 10.31
+Fold 6
+train_acc: 10.08 val_acc: 10.48
+Fold 7
+train_acc: 10.23 val_acc: 10.37
+Fold 8
+train_acc: 10.16 val_acc: 9.90
+Fold 9
+train_acc: 10.19 val_acc: 10.13
+Fold 10
+train_acc: 10.10 val_acc: 11.05
+Fold 1
+train_acc: 10.10 val_acc: 10.17
+Fold 2
+train_acc: 10.17 val_acc: 10.35
+Fold 3
+train_acc: 10.11 val_acc: 10.52
+Fold 4
+train_acc: 10.18 val_acc: 10.29
+Fold 5
+train_acc: 10.17 val_acc: 10.31
+Fold 6
+train_acc: 10.04 val_acc: 10.48
+Fold 7
+train_acc: 10.13 val_acc: 10.37
+Fold 8
+train_acc: 10.23 val_acc: 9.90
+Fold 9
+train_acc: 10.14 val_acc: 10.13
+Fold 10
+train_acc: 10.05 val_acc: 11.05
+Fold 1
+train_acc: 83.84 val_acc: 81.79
+Fold 2
+train_acc: 10.29 val_acc: 10.35
+Fold 3
+train_acc: 75.78 val_acc: 73.62
+Fold 4
+train_acc: 10.19 val_acc: 10.29
+Fold 5
+train_acc: 10.20 val_acc: 10.31
+Fold 6
+train_acc: 10.13 val_acc: 10.48
+Fold 7
+train_acc: 10.18 val_acc: 10.37
+Fold 8
+train_acc: 10.26 val_acc: 9.90
+Fold 9
+train_acc: 75.45 val_acc: 75.04
+Fold 10
+train_acc: 10.10 val_acc: 11.05
+Fold 1
+train_acc: 62.96 val_acc: 62.35
+Fold 2
+train_acc: 10.16 val_acc: 10.35
+Fold 3
+train_acc: 10.21 val_acc: 10.52
+Fold 4
+train_acc: 10.22 val_acc: 10.29
+Fold 5
+train_acc: 86.07 val_acc: 87.19
+Fold 6
+train_acc: 10.22 val_acc: 10.48
+Fold 7
+train_acc: 10.12 val_acc: 10.37
+Fold 8
+train_acc: 90.32 val_acc: 91.04
+Fold 9
+train_acc: 10.13 val_acc: 10.13
+Fold 10
+train_acc: 10.16 val_acc: 11.05
+Fold 1
+train_acc: 10.32 val_acc: 10.17
+Fold 2
+train_acc: 10.17 val_acc: 10.35
+Fold 3
+train_acc: 10.24 val_acc: 10.52
+Fold 4
+train_acc: 10.23 val_acc: 10.29
+Fold 5
+train_acc: 10.19 val_acc: 10.31
+Fold 6
+train_acc: 10.24 val_acc: 10.48
+Fold 7
+train_acc: 10.27 val_acc: 10.37
+Fold 8
+train_acc: 10.22 val_acc: 9.90
+Fold 9
+train_acc: 10.18 val_acc: 10.13
+Fold 10
+train_acc: 10.10 val_acc: 11.05
+Fold 1
+train_acc: 10.13 val_acc: 10.17
+Fold 2
+train_acc: 10.26 val_acc: 10.35
+Fold 3
+train_acc: 10.22 val_acc: 10.52
+Fold 4
+train_acc: 10.26 val_acc: 10.29
+Fold 5
+train_acc: 10.18 val_acc: 10.31
+Fold 6
+train_acc: 10.13 val_acc: 10.48
+Fold 7
+train_acc: 10.22 val_acc: 10.37
+Fold 8
+train_acc: 10.25 val_acc: 9.90
+Fold 9
+train_acc: 10.11 val_acc: 10.13
+Fold 10
+train_acc: 10.19 val_acc: 11.05
+Fold 1
+train_acc: 10.65 val_acc: 8.86
+Fold 2
+train_acc: 10.63 val_acc: 10.35
+Fold 3
+train_acc: 26.06 val_acc: 30.45
+Fold 4
+train_acc: 31.74 val_acc: 33.50
+Fold 5
+train_acc: 21.79 val_acc: 1.72
+Fold 6
+train_acc: 10.07 val_acc: 3.54
+Fold 7
+train_acc: 24.95 val_acc: 18.05
+Fold 8
+train_acc: 10.16 val_acc: 8.86
+Fold 9
+train_acc: 10.12 val_acc: 3.91
+Fold 10
+train_acc: 28.66 val_acc: 29.24
