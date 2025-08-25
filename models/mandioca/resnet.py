@@ -79,7 +79,7 @@ val_loader = DataLoader(val_dataset, batch_size=4, shuffle=False)
 
 STUDY_NAME = "mandioca_resnet_domain_adaptation"
 n_classes = 3
-fine_tuning = True
+fine_tuning = False
 
 kfold_acc = cross_validation_resnet(
     train_val_dataset,
@@ -95,7 +95,7 @@ kfold_acc = cross_validation_resnet(
 train_val_dataset = DatasetAugmentation((x_train_val, y_train_val), transform=train_transforms)
 train_val_loader = DataLoader(train_val_dataset, batch_size=4, sampler=sampler)
 
-resnet = ResNet(n_classes=n_classes)
+resnet = ResNet(n_classes=n_classes, fine_tuning=fine_tuning)
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(resnet.parameters(), lr=5e-4)
 

@@ -11,7 +11,7 @@ import numpy as np
 import os
 from PIL import Image
 
-from cnn import CNN, CNNTransferLearning, DatasetAugmentation, SubsetAugmentation
+from cnn import CNN, CNNTransferLearning, ResNet, DatasetAugmentation, SubsetAugmentation
 
 def load_data(name, root, img_size=(224, 224)):
     '''

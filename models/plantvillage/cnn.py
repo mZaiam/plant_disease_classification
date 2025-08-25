@@ -184,10 +184,6 @@ class CNN(nn.Module):
             acc_val_epoch = 100 * total_correct_val / total_samples_val 
             acc_val.append(acc_val_epoch)
 
-            if acc_val_epoch > best_loss:
-                best_loss = acc_val_epoch
-                self.model_state = self.state_dict()
-
             # Pruning 
             if trial:
                 trial.report(acc_val_epoch, step=i)
@@ -202,6 +198,7 @@ class CNN(nn.Module):
         self.loss_val = loss_val
         self.acc_train = acc_train
         self.acc_val = acc_val
+        self.model_state = self.state_dict()
 
         # Return losses for optuna HP tuning
         if optuna:
@@ -365,10 +362,6 @@ class ResNet(nn.Module):
             loss_val.append(loss_val_epoch)
             acc_val_epoch = 100 * total_correct_val / total_samples_val 
             acc_val.append(acc_val_epoch)
-
-            if acc_val_epoch > best_loss:
-                best_loss = acc_val_epoch
-                self.model_state = self.state_dict()
             
             # Pruning 
             if trial:
@@ -384,6 +377,7 @@ class ResNet(nn.Module):
         self.loss_val = loss_val
         self.acc_train = acc_train
         self.acc_val = acc_val
+        self.model_state = self.state_dict()
 
         # Return losses for optuna HP tuning
         if optuna:
