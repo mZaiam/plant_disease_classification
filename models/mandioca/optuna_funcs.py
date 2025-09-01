@@ -145,7 +145,7 @@ def objective(trial, train_loader, val_loader, device, kfold=False, best_model=F
         return cnn
     else:
         if kfold:
-            return max(val_acc)
+            return val_acc[-1]
         else:
             return loss
 
@@ -252,7 +252,7 @@ def cross_validation_resnet(dataset, train_transforms, val_transforms, device, n
             epochs,
             optuna=True
         )
-        acc.append(max(acc_val))
+        acc.append(acc_val[-1])
         print(acc_val)
 
     return acc
@@ -303,7 +303,7 @@ def cross_validation_tl(best_trial, dataset, train_transforms, val_transforms, d
             epochs,
             optuna=True
         )
-        acc.append(max(acc_val))
+        acc.append(acc_val[-1])
         print(acc_val)
 
     return acc

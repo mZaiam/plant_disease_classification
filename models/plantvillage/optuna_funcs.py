@@ -146,7 +146,7 @@ def objective(trial, train_loader, val_loader, device, kfold=False, best_model=F
         return cnn
     else:
         if kfold:
-            return max(val_acc)
+            return val_acc[-1]
         else:
             return loss
 

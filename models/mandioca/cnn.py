@@ -202,7 +202,7 @@ class CNN(nn.Module):
 
         # Return losses for optuna HP tuning
         if optuna:
-            return min(self.loss_val), (self.acc_train, self.acc_val)
+            return self.loss_val[-1], (self.acc_train, self.acc_val)
 
 class DatasetAugmentation(torch.utils.data.Dataset):
     '''
@@ -381,7 +381,7 @@ class ResNet(nn.Module):
 
         # Return losses for optuna HP tuning
         if optuna:
-            return min(self.loss_val), (self.acc_train, self.acc_val)
+            return self.loss_val[-1], (self.acc_train, self.acc_val)
 
 # Transfer Learning class
 
@@ -574,4 +574,4 @@ class CNNTransferLearning(nn.Module):
 
         # Return losses for optuna HP tuning
         if optuna:
-            return min(self.loss_val), (self.acc_train, self.acc_val)
+            return self.loss_val[-1], (self.acc_train, self.acc_val)

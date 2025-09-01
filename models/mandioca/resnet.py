@@ -77,9 +77,9 @@ val_loader = DataLoader(val_dataset, batch_size=4, shuffle=False)
 
 # Cross-Validation
 
-STUDY_NAME = "mandioca_resnet_domain_adaptation"
+STUDY_NAME = "mandioca_resnet_fine_tuning"
 n_classes = 3
-fine_tuning = False
+fine_tuning = True
 
 kfold_acc = cross_validation_resnet(
     train_val_dataset,

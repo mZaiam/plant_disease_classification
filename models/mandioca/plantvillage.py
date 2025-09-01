@@ -97,9 +97,9 @@ best_trial = study.get_trials()[best_trial_num]
 
 # Cross-Validation
 
-STUDY_NAME = "mandioca_plantvillage_domain_adaptation"
+STUDY_NAME = "mandioca_plantvillage_fine_tuning"
 n_classes = 3
-fine_tuning = False
+fine_tuning = True
 
 kfold_acc = cross_validation_tl(
     best_trial,
