@@ -60,7 +60,7 @@ def load_data(name, root, img_size=(224, 224)):
 
     return images, labels, names
 
-def objective(trial, train_loader, val_loader, device, kfold=False, best_model=False):
+def objective(trial, train_loader, val_loader, device, kfold=False, best_model=False, instantiate=True):
     '''
     Optuna objective.
     
@@ -71,6 +71,7 @@ def objective(trial, train_loader, val_loader, device, kfold=False, best_model=F
         device:       torch device.
         kfold:        bool for KFold usage.
         best_model:   bool for returning best model.
+        instantiate:  bool for just instantiating the model.
     '''
 
     # Defining HP grid
@@ -122,32 +123,36 @@ def objective(trial, train_loader, val_loader, device, kfold=False, best_model=F
         device=device
     )
 
-    # Instantiating optimizer and loss
-    criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(cnn.parameters(), lr=params['lr'])
-    
-    # Training model
-    EPOCHS = 30
-    
-    loss, (train_acc, val_acc) = cnn.fit(
-        train_loader,
-        val_loader,
-        optimizer,
-        criterion,
-        EPOCHS,
-        trial=trial,
-        optuna=True
-    )
-
-    print(f'train_acc: {max(train_acc):.2f} val_acc: {max(val_acc):.2f}')
-
-    if best_model:
+    if instantiate:
         return cnn
+
     else:
-        if kfold:
-            return val_acc[-1]
+        # Instantiating optimizer and loss
+        criterion = nn.CrossEntropyLoss()
+        optimizer = optim.Adam(cnn.parameters(), lr=params['lr'])
+        
+        # Training model
+        EPOCHS = 30
+        
+        loss, (train_acc, val_acc) = cnn.fit(
+            train_loader,
+            val_loader,
+            optimizer,
+            criterion,
+            EPOCHS,
+            trial=trial,
+            optuna=True
+        )
+    
+        print(f'train_acc: {max(train_acc):.2f} val_acc: {max(val_acc):.2f}')
+    
+        if best_model:
+            return cnn
         else:
-            return loss
+            if kfold:
+                return val_acc[-1]
+            else:
+                return loss
 
 def cross_validation(study, dataset, train_transforms, val_transforms, device, n_splits=10, top=50):
     '''
