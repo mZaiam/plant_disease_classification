@@ -92,7 +92,8 @@ cnn = objective(
     train_loader,
     test_loader,
     device,
-    best_model=True
+    best_model=True,
+    instantiate=False
 )
 
 train_loss, test_loss = cnn.loss_train, cnn.loss_val

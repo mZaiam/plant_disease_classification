@@ -77,7 +77,7 @@ val_loader = DataLoader(val_dataset, batch_size=4, shuffle=False)
 # Optuna
 
 def partial_objective(trial):
-    return objective(trial, train_loader, val_loader, device)
+    return objective(trial, train_loader, val_loader, device, instantiate=False)
 
 STUDY_NAME = 'mandioca_baseline'
 TRIALS = 500

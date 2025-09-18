@@ -197,7 +197,7 @@ def cross_validation(study, dataset, train_transforms, val_transforms, device, n
             train_loader = DataLoader(train_subset, batch_size=4, shuffle=True)
             val_loader = DataLoader(val_subset, batch_size=4, shuffle=False)
             
-            acc = objective(trial, train_loader, val_loader, device, kfold=True)
+            acc = objective(trial, train_loader, val_loader, device, kfold=True, instantiate=False)
             losses.append(acc)
 
         mean = sum(losses) / len(losses)
