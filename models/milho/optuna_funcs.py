@@ -1,7 +1,7 @@
 import torch
 import torch.optim as optim
 import torch.nn as nn
-from torch.utils.data import DataLoader, TensorDataset
+from torch.utils.data import DataLoader, TensorDataset, WeightedRandomSampler
 from torchvision import transforms
 
 from sklearn.model_selection import KFold
@@ -194,7 +194,13 @@ def cross_validation(study, dataset, train_transforms, val_transforms, device, n
             train_subset = SubsetAugmentation(dataset, train_idx, train_transforms)
             val_subset = SubsetAugmentation(dataset, val_idx, val_transforms)
             
-            train_loader = DataLoader(train_subset, batch_size=8, shuffle=True)
+            y_train = [dataset[i][1] for i in train_idx]
+            class_counts = torch.bincount(torch.tensor(y_train))
+            weights = 1.0 / class_counts.float()
+            sample_weights = weights[y_train]
+            sampler = WeightedRandomSampler(sample_weights, num_samples=len(y_train), replacement=True)
+            
+            train_loader = DataLoader(train_subset, batch_size=8, sampler=sampler)
             val_loader = DataLoader(val_subset, batch_size=8, shuffle=False)
             
             acc = objective(trial, train_loader, val_loader, device, kfold=True, instantiate=False)
@@ -246,7 +252,13 @@ def cross_validation_resnet(dataset, train_transforms, val_transforms, device, n
         train_subset = SubsetAugmentation(dataset, train_idx, train_transforms)
         val_subset = SubsetAugmentation(dataset, val_idx, val_transforms)
         
-        train_loader = DataLoader(train_subset, batch_size=8, shuffle=True)
+        y_train = [dataset[i][1] for i in train_idx]
+        class_counts = torch.bincount(torch.tensor(y_train))
+        weights = 1.0 / class_counts.float()
+        sample_weights = weights[y_train]
+        sampler = WeightedRandomSampler(sample_weights, num_samples=len(y_train), replacement=True)
+        
+        train_loader = DataLoader(train_subset, batch_size=8, sampler=sampler)
         val_loader = DataLoader(val_subset, batch_size=8, shuffle=False)
         
         _, (acc_train, acc_val) = resnet.fit(
@@ -297,7 +309,13 @@ def cross_validation_tl(best_trial, dataset, train_transforms, val_transforms, d
         train_subset = SubsetAugmentation(dataset, train_idx, train_transforms)
         val_subset = SubsetAugmentation(dataset, val_idx, val_transforms)
         
-        train_loader = DataLoader(train_subset, batch_size=8, shuffle=True)
+        y_train = [dataset[i][1] for i in train_idx]
+        class_counts = torch.bincount(torch.tensor(y_train))
+        weights = 1.0 / class_counts.float()
+        sample_weights = weights[y_train]
+        sampler = WeightedRandomSampler(sample_weights, num_samples=len(y_train), replacement=True)
+        
+        train_loader = DataLoader(train_subset, batch_size=8, sampler=sampler)
         val_loader = DataLoader(val_subset, batch_size=8, shuffle=False)
         
         _, (acc_train, acc_val) = cnn.fit(
