@@ -18,4 +18,4 @@ Inside the `models/` directory, it is possible to found 4 directories:
 The former contains the CNN pre-trained on the PlantVillage dataset. The latter contains the models trained on the Digipathos data. Each one of these directories contains:
 - `best_models/`: best models for each pipeline;
 - `model_analysis.ipynb`: the confusion matrices and hypothesis tests for each pipeline;
-- `model_explanation/`: the explainability analysis performed on the models. Methods such as `Occlusion`, `GradSHAP` and `GardCAM` were used.
+- `model_explanation/`: the explainability analysis performed on the models. Methods such as `Occlusion`, `GradSHAP` and `GradCAM` were used.
